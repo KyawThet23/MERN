@@ -1,0 +1,36 @@
+<html>
+  <script>
+    console.log("'2'==2",'2'== 2);
+    console.log("'2'==2",'2'=== 2)
+
+    let obj1 = {
+      valueOf:function()
+      {
+        return 4;
+      }
+    }
+    let obj = {
+      valueOf:function()
+      {
+        return false;
+      }
+    }
+    let obj2 = {
+      valueOf:function()
+      {
+        return 'false';
+      }
+    }
+    let obj3 = {
+      valueOf:function()
+      {
+        return null;
+      }
+    }
+    console.log("4 == obj", 4 == obj1);
+    console.log("false == obj", false == obj);
+    console.log("'false' == obj", false == obj2);
+    console.log("null == false", null == false);
+    console.log("null == true", null == true);
+  </script>
+</html>

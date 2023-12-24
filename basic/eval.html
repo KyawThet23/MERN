@@ -1,0 +1,28 @@
+<html>
+  <script>
+    //eval
+    let str = "alert('Hello Eval') ,1+2";
+    let result = eval(str);
+    console.log("Result", result);
+
+    //First-Defined (??)
+    let max = 0;
+    let preference = {
+      max: 1234,
+    };
+    let maxWidth = max || preference.max || 500;
+    console.log("Max", maxWidth);
+    maxWidth = max ?? preference.max ?? 500;
+    console.log("Max", maxWidth);
+
+    //typeof
+    console.log("Type of null", typeof null);
+    console.log("Type of {}", typeof {});
+
+    //delete
+    let a = [1, 2, 3];
+    console.log("2 in a", 2 in a);
+    delete a[2];
+    console.log("2 in a", 2 in a);
+  </script>
+</html>

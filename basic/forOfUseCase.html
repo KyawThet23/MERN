@@ -1,0 +1,18 @@
+<html>
+  <script>
+    let obj = {
+      name: null,
+      age:23
+    }
+    function checkNull(obj)
+    {
+      for(const prop of Object.keys(obj))
+      {
+        if (obj[prop] === null){
+          console.log('Prop ',prop ,' is null');
+        }
+      }
+    }
+    checkNull(obj);
+  </script>
+</html>

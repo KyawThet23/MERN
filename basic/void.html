@@ -1,0 +1,18 @@
+<html>
+  <form submit="doSomething()">
+    <button type="submit">Submit</button>
+  </form>
+  <script>
+
+    function doSomething()
+    {
+      console.log('Do something');
+      return 'something';
+    }
+    let result = void(doSomething());
+    console.log('Result', result)
+
+    let data = (console.log('One'),console.log('Two'),3)
+    console.log(data);
+  </script>
+</html>

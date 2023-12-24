@@ -1,0 +1,30 @@
+<html>
+  <script>
+    let parent = {
+      data : 200,
+      method : function () 
+      {
+        console.log('Method in parent')
+      }
+    }
+    console.log('Is method in parent : ', 'method' in parent);
+
+    let target = {x: 1}, source = {y: 2, z: 3};
+      for(let key of Object.keys(source)) {
+      target[key] = source[key];
+    }
+    console.log('target', target);
+
+    let defaultConfig = {
+        background : 'gery',
+        border_radius : 3
+    }
+    let userInput = {
+      border_radius : 5
+    }
+
+    Object.assign(defaultConfig,userInput);
+    console.log('border_radius :',defaultConfig.border_radius);
+
+  </script>
+</html>

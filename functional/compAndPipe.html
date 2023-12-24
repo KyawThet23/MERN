@@ -1,0 +1,59 @@
+<html>
+  <!-- 
+        Make each program do one thing well. To do a 
+    new job, build afresh rather than complicate old 
+    programs by adding new “features.”
+        Expect the output of every program to become the 
+    input to another, as yet unknown, program.
+   -->
+  <script>
+    const toUpper = (msg) => msg.toUpperCase();
+    const sayHi = (name) => 'Hi '+name;
+
+    function sayHiToYou(name){
+      let upperName = toUpper(name);
+      return sayHi(upperName);
+    }
+
+    console.log('Say hi :',sayHiToYou("Wai Wai"));
+
+    function compose(funA,funB){
+      return function(msg){
+        return funA(funB(msg));
+      }
+    }
+    let newFun = compose(toUpper,sayHi);
+
+    console.log('compose :',newFun('compose'));
+
+    // you can see here output of function B is used as input for function A
+    // this is what compose function is aim for.
+    
+    //let write a function to count words in a given string
+    let splitIntoSpaces = (str) => str.split(" ");
+    let count = (array) => array.length;
+    let wordCount = compose(count,splitIntoSpaces);
+
+    console.log('WC :',wordCount('Say Hello to you MF.'));
+
+    //compose many functions
+
+    const addOne = (x) => x + 1;
+    const double = (x) => x * 2;
+    const triple = (x) => x * 3;
+
+    function composeN(...fns){
+      return function(x){
+        return fns.reduceRight(function(input,fun){
+          return fun(input);
+        },x);
+      }
+    }
+
+    const composeN2 = (...fns) => x => fns.reduceRight( (input,fun) => fun(input),x );
+
+    let result = composeN(addOne,double,triple)(2);
+    let result2 = composeN2(addOne,double,triple)(3);
+    console.log('Result1 :',result,' Result2 :',result2);
+  </script>
+</html>

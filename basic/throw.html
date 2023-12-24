@@ -1,0 +1,50 @@
+<html>
+  <script>
+
+    // function div(a,b){
+    //   console.log('Div called',a,' ',b);
+    //   if (isNaN(a) || isNaN(b)){
+    //     throw new Error('Some operand is NaN');
+    //   }
+    //   return a/b;
+    // }
+    // try 
+    // {
+    //   let data = div(2,3);
+    //   console.log('Data', data);
+    // } 
+    // catch (e) 
+    // {
+    //   console.log('We catch ',e);
+    // }
+    // finally 
+    // {
+    //   console.log('Finally run');
+    // }
+
+    function fun()
+    {
+      try 
+      {
+        throw new Error('Something got wrong');
+        return 20;
+      } 
+      catch (e) 
+      {
+        console.log('We catch error ',e);
+        return 3;
+        throw new Error('We catch error');     
+      }
+      finally
+      {
+        console.log('Finally run');
+        return 100;
+      }
+    }
+
+    let k = fun();
+    console.log('K', k);
+
+
+  </script>
+</html>

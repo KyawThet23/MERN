@@ -1,0 +1,29 @@
+<html>
+  <script>
+
+    //slice and copyWithin doesn't modify the array
+    let a = [1,2,3,4,5];
+    console.log('0,3 :',a.slice(0,3));
+    console.log(a);
+
+    //splice , fill and copyWithin modify
+    //splice(start, deleteCount, item1)
+    //return array with deleted item
+
+    const months = ['Jan', 'March', 'April', 'June'];
+    months.splice(1, 0, 'Feb');
+    // Inserts at index 1
+    console.log(months);
+    months.splice(4, 1, 'May');
+    // Replaces 1 element at index 4
+    console.log(months);
+
+    //fill(element,start,end)
+    console.log([1, 2, 3].fill(4, 1));
+    console.log([1, 2, 3].fill(4, 1, 2));
+
+    //copyWithin(target, start, end)
+    console.log([1, 2, 3, 4, 5].copyWithin(0, 3));
+
+  </script>
+</html>

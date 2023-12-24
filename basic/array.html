@@ -1,0 +1,74 @@
+<html>
+  <script>
+    //dynamic type language တွေရဲ့ array က type မျိုးစုံထည့်လို့ရ 
+    //size of array is also dynamic and unlimited
+
+    //Array literal
+    let a = [3,4,5];
+    let b = [1,2,...a,6,7];
+    let c = new Array(1,2,'Hello array constructor.');
+    let d = Array.from(a);
+    let e = Array.of(1,2,'Hello Array');
+
+    //Array iterator methods
+
+    let data = [1,2,3,4,5];
+
+    // a is current element , b is index , c is array
+    //this method modified original array;
+    data.forEach(function(a,b,c) {c[b] = a+1});
+    console.log('data :',data);
+
+    //map and filter didn't modify orignal array
+    //map is for operation
+    let data2 = data.map(value => value*value);
+    console.log('map => ', data2);
+    //filter is for predicate
+    let data3 = data.filter(value => value%2 == 0);
+    console.log('filter => ', data3);
+
+    //find return element or undefied
+    let element = data.find(x => x % 2 == 0);
+    console.log('findelment : ',element);
+    //findindex return index of the element or -1
+    let index = data.findIndex(x => x % 2 == 0);
+    console.log('index : ',index);
+    //both stop iterating when they find first truthy
+
+    let every = data.every(x => x % 2 == 0); //true default
+    let some = data.some(x => x % 2 == 0);   //false default
+    console.log('every : ',every,' some : ',some);
+
+    //reduce
+    const array = [15, 16, 17, 18, 19];
+
+    //reduce without initial value
+    function reducer(accumulator, currentValue, index) {
+      const returns = accumulator + currentValue;
+      console.log(
+        `accumulator: ${accumulator}, currentValue: ${currentValue}, index: ${index}, returns: ${returns}`,
+      );
+      return returns;
+    } 
+        
+    array.reduce(reducer);
+
+    //reduce with initial value
+    let initial = 10;
+    console.log('initial :',array.reduce((x,y) => x+y,initial));
+
+    //the above is equal to for...of loop
+    for (const num of array){
+      initial += num;
+    }
+    console.log('initial :',initial);
+
+    //reduceRight is working from highest index to lowest
+    
+    //flatMap
+    let phrases = ["hello world", "the definitive guide"];
+    let words = phrases.flatMap(phrase => phrase.split(" "));
+    console.log(words);
+
+  </script>
+</html>

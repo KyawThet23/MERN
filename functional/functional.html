@@ -1,0 +1,49 @@
+<html>
+  <!-- 
+
+    Welcome to the functional programming world, a world that has only 
+functions, living happily without any outside world dependencies, 
+without states, and without mutations , forever.
+    
+    What is a function in Math?
+    f(x) = y.
+    • A function must always take an argument.
+    • A function must always return a value.
+    • A function should act only on its receiving arguments 
+      (i.e., X), not the outside world.
+    • For a given X, there will be only one Y
+
+   -->
+  <script>
+
+    //The following line of code is working well
+    //but not suitable as function obeying rule of math 
+    //cause it use value from outside world.
+    var percentValue = 5;
+    var calculateTax = (value) => { 
+      return value/100 * (100 + percentValue) 
+    };
+
+    //let fix that
+    var calculateTax = (value, percentValue) => { return value/100 * (100 + percentValue) };
+
+    // Referential transparency
+    // function going to give same value for same input , so we can cache it.
+    // no need to calculate it again.
+
+    // functional programming is declarative and writing abstracted code.
+
+    // you need to print in console the whole array
+    // in Imperative programming , we tell how to do to compiler
+    var array = [1,2,3];
+    for(i=0;i<array.length;i++)
+    console.log(array[i]);
+
+    // in declarative programming , we tell what to do to compiler
+    array.forEach((element) => console.log(element));
+
+    //another example with built-in method
+    console.log(Math.max(3,4,5,6));
+
+  </script>
+</html>

@@ -1,0 +1,40 @@
+<html>
+  <body>
+    
+  </body>
+  <script>
+    let stack ={
+      items:[],
+      top:-1,
+      push:function(element)
+      {
+        this.items[++this.top]=element;
+      },
+      pop:function()
+      {
+        return this.items[this.top--];
+      }
+    }
+    stack.push('One');
+    stack.push('Two');
+    console.log('Pop ',stack.pop());
+
+    let parent = {
+      x:100,
+      items:[]
+    }
+    let obj2 = Object.create(parent,{
+      y:{
+        value : 300,
+        configurable : false
+      }
+    })
+    parent.x = 200;
+    console.log('Obj2',obj2);
+    console.log('Obj2.x',obj2.x);
+
+    obj2.x = 300;
+    console.log('obj2.x',obj2.x);
+    console.log('parent.x',parent.x);
+  </script>
+</html>

@@ -1,0 +1,23 @@
+<html>
+
+  <script>
+
+    function getMany()
+    {
+      return [100,200];
+    }
+    let [First,Second] = getMany();
+    console.log('First',First, 'Second',Second)
+
+    let obj = {
+      name : 'KTH',
+      age : 23,
+      job : 'Full satck developer',
+      RS : 'Single'
+    };
+    let {name,RS} = obj;
+    console.log('name',name , 'RS',RS);
+
+  </script>
+
+</html>

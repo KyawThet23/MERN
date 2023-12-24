@@ -1,0 +1,18 @@
+<html>
+  <script>
+    //Computed Property Names
+    let x = 200;
+    let propertyPerfix = 'Internal-';
+    let o = {
+      [propertyPerfix+x] : x
+    }
+    console.log('o ',o);
+
+    //Shorthand method
+    let square = {
+      side : 10,
+      area : function(){ return this.side * this.side; }
+    }
+    console.log('area ',square.area());
+  </script>
+</html>

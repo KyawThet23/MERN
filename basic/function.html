@@ -1,0 +1,36 @@
+<html>
+  <script>
+
+      function square(number) {
+        return number * number;
+      }
+
+      console.log('square of 5 :',square(5));
+
+      //function expression
+      //Function expressions are convenient when passing a function as an argument to another function.
+      const square2 = function (number) {
+        return number * number;
+      };
+
+      console.log('square of 4 with = :',square2(4));
+
+      function map(f, a) {
+        const result = new Array(a.length);
+        for (let i = 0; i < a.length; i++) {
+          result[i] = f(a[i]);
+        }
+        return result;
+      }
+
+      const cube = function (x) {
+        return x * x * x;
+      };
+
+      const numbers = [0, 1, 2, 5, 10];
+      console.log(map(cube, numbers));
+
+      //function is hoisting in js for declaration but not for expression;
+
+  </script>
+</html>
